@@ -3,7 +3,11 @@
 <head>
     {{> head}}
 </head>
-<body>
-    {{{ yield }}}
+<body data-spy="scroll" data-target=".navbar">
+{{> navbar}}
+    <div class="container">
+
+        {{{ yield }}}
+    </div>
 </body>
 </html>

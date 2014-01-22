@@ -1,8 +1,8 @@
-express = require('express')
-routes = require('./routes')
-user = require('./routes/user')
-http = require('http')
-path = require('path')
+express = require 'express'
+routes = require './routes'
+user = require './routes/user'
+http = require 'http'
+path = require 'path'
 app = express()
 
 #set main layout
@@ -10,7 +10,8 @@ app.set 'layout', 'layout'
 
 #expose templates to all views
 app.set 'partials',
-  head: 'partials/head'
+  head: 'partials/head',
+  navbar: 'partials/navbar'
 
 app.engine 'html', require('hogan-express')
 app.enable 'view cache'
@@ -29,6 +30,7 @@ app.configure ->
 
   #app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use express.static(path.join(__dirname, 'public'))
+  app.use express.static(path.join(__dirname, 'bower_components'))
 
 app.configure 'development', ->
   app.use express.errorHandler()

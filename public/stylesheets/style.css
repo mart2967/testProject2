@@ -1,8 +1,9 @@
+/* Prevents navbar from overlapping page */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding-top: 70px;
 }
 
-a {
-  color: #00B7FF;
+.fixlink {
+    padding-top: 60px;
+    margin-top: -60px;
 }
