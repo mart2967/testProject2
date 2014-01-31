@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e692ec15-1aef-4862-b111-8a4f7f4baa70" name="Default" comment="initial backbone.js integration&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/section.coffee" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/layout.html" afterPath="" />
+    <list default="true" id="e692ec15-1aef-4862-b111-8a4f7f4baa70" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.coffee" afterPath="$PROJECT_DIR$/app.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/head.html" afterPath="$PROJECT_DIR$/views/partials/head.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.coffee" afterPath="$PROJECT_DIR$/routes/index.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="testProject2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,19 +100,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="26" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.36545455" vertical-offset="465" max-vertical-offset="2016">
+            <state line="37" column="26" selection-start="1407" selection-end="1407" vertical-scroll-proportion="-7.4444447" vertical-offset="465" max-vertical-offset="2016">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schemas.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schemas/schemas.coffee">
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="43" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+            <state line="1" column="6" selection-start="14" selection-end="14" vertical-scroll-proportion="0.030508475" vertical-offset="0" max-vertical-offset="590">
               <folding />
             </state>
           </provider>
@@ -156,7 +147,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/testable.js" />
         <option value="$PROJECT_DIR$/views/tests.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/models/models.coffee" />
         <option value="$PROJECT_DIR$/public/javascripts/models/models.coffee" />
         <option value="$PROJECT_DIR$/public/javascripts/views/views.coffee" />
@@ -173,6 +163,7 @@
         <option value="$PROJECT_DIR$/routes/section.coffee" />
         <option value="$PROJECT_DIR$/public/javascripts/models/section.js" />
         <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -393,7 +384,11 @@
       <created>1390437833037</created>
       <updated>1390437833037</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="initial backbone.js integration&#10;">
+      <created>1391211853133</created>
+      <updated>1391211853133</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -591,11 +586,6 @@
         <state line="7" column="27" selection-start="140" selection-end="140" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="324" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/backbone/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2691" column="19" selection-start="102352" selection-end="102352" vertical-scroll-proportion="0.33272395" vertical-offset="48256" max-vertical-offset="81900" />
@@ -735,7 +725,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="26" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.36545455" vertical-offset="465" max-vertical-offset="2016">
+        <state line="37" column="26" selection-start="1407" selection-end="1407" vertical-scroll-proportion="-7.4444447" vertical-offset="465" max-vertical-offset="2016">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="6" selection-start="14" selection-end="14" vertical-scroll-proportion="0.030508475" vertical-offset="0" max-vertical-offset="590">
           <folding />
         </state>
       </provider>
