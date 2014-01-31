@@ -4,7 +4,9 @@
   "main": "public/stylesheets/style.css",
   "ignore": [],
   "dependencies": {
-    "bootstrap": "~3.0.3"
+    "bootstrap": "~3.0.3",
+    "backbone": "~1.1.0",
+    "underscore": "~1.5.2"
   },
   "devDependencies": {}
 }

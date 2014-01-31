@@ -1,13 +1,27 @@
 express = require 'express'
 routes = require './routes'
+section = require './routes/section'
 user = require './routes/user'
 http = require 'http'
 path = require 'path'
+mongoose = require 'mongoose'
+models = require './schemas/schemas'
 app = express()
 
-#set main layout
-app.set 'layout', 'layout'
+#connect to database
+# ./mongodb/bin/mongod --dbpath ~/WebstormProjects/testProject2/db/
+mongoose.connect 'mongodb://localhost/test'
+db = mongoose.connection
+db.on 'error', console.error.bind(console, 'connection error:')
+db.once 'open', ->
+  console.log 'DB connection opened!'
 
+#nodeInfo = new models.Info {title: 'Node.js', link: 'http://nodejs.org/', text: 'blah', category: 'main'}
+#nodeInfo.save()
+
+
+#set main layout
+app.set 'layout', 'layouts/main'
 #expose templates to all views
 app.set 'partials',
   head: 'partials/head',
@@ -36,6 +50,9 @@ app.configure 'development', ->
   app.use express.errorHandler()
 
 app.get '/', routes.index
-app.get '/users', user.list
+app.get '/section/:id', section.getSection
+app.post '/section', section.section
+app.get '/sections', section.findAll
+
 http.createServer(app).listen app.get('port'), ->
   console.log 'Express server listening on port ' + app.get('port')
