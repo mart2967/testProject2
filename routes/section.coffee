@@ -1,8 +1,7 @@
 Section = require('../schemas/schemas').Section
 
 exports.findAll = (req, res) ->
-  Section.find.toArray (err, items) ->
-    console.log items
+  Section.find (err, items) ->
     res.send items
 
 
@@ -12,10 +11,10 @@ exports.section = (req, res) ->
   newSection.save()
   res.send()
 
-
 exports.getSection = (req, res) ->
   id = req.route.params['id']
-  #console.log req.route
-  Section.find {_id: id}, (err, result) ->
-    console.log result
-    res.send(result)
+  Section.findById id, (err, result) ->
+    res.send result
+
+
+  
