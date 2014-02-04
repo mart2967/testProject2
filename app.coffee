@@ -25,7 +25,8 @@ app.set 'layout', 'layouts/main'
 #expose templates to all views
 app.set 'partials',
   head: 'partials/head',
-  navbar: 'partials/navbar'
+  navbar: 'partials/navbar',
+  scripts: 'partials/scripts'
 
 app.engine 'html', require('hogan-express')
 app.enable 'view cache'
@@ -50,9 +51,10 @@ app.configure 'development', ->
   app.use express.errorHandler()
 
 app.get '/', routes.index
-app.get '/section/:id', section.getSection
-app.post '/section', section.section
+app.get '/section/:id', section.getById
+app.post '/section', section.create
 app.get '/sections', section.findAll
+app.put '/section/:id', section.edit
 
 http.createServer(app).listen app.get('port'), ->
   console.log 'Express server listening on port ' + app.get('port')

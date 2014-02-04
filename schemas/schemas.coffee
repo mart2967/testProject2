@@ -7,6 +7,7 @@ Section = new Schema(
   link: String
   body: String
   category: String
+  htmlId: String
 )
 
 Section = mongoose.model 'Section', Section
