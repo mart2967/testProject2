@@ -9,7 +9,7 @@ var SectionCollectionView = Backbone.View.extend({
     render: function () {
         _.each(this.collection.models, function(item) {
             var view = new SectionView({model: item});
-            this.$el.append(view.$el);
+            this.$el.append(view.el);
         }, this);
         return this;
 
