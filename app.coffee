@@ -1,11 +1,10 @@
 express = require 'express'
 routes = require './routes'
 section = require './routes/section'
-user = require './routes/user'
 http = require 'http'
 path = require 'path'
 mongoose = require 'mongoose'
-models = require './schemas/schemas'
+#models = require './schemas/schemas'
 app = express()
 
 #connect to database
@@ -16,7 +15,7 @@ db.on 'error', console.error.bind(console, 'connection error:')
 db.once 'open', ->
   console.log 'DB connection opened!'
 
-#nodeInfo = new models.Info {title: 'Node.js', link: 'http://nodejs.org/', text: 'blah', category: 'main'}
+#nodeInfo = new models.Section {title: 'Node.js', link: 'http://nodejs.org/', body: 'blah', category: 'main'}
 #nodeInfo.save()
 
 
