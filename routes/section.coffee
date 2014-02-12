@@ -32,8 +32,8 @@ exports.edit = (req, res) ->
   Section.update({ _id: id }, { $set: section }, (err, numAffected, raw) ->
     console.log err if err
     #console.log 'The number of updated documents was %d', numAffected
-    console.log 'The raw response from Mongo was ', raw
-    res.send()
+    #console.log 'The raw response from Mongo was ', raw
+    res.send(section)
   )
 
 populateDB = ->
