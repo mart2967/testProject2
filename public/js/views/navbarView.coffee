@@ -1,6 +1,7 @@
 class window.NavbarView extends Backbone.View
   tagName: 'ul'
   className: 'nav navbar-nav'
+  id: 'nav-buttons'
 
   initialize: ->
     @render()
