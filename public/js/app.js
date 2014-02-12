@@ -28,6 +28,9 @@ Created by mart2967 on 1/30/14.
           $('#content').html(new window.SectionCollectionView({
             collection: sectionList
           }).$el);
+          $('#bs-example-navbar-collapse-1').html(new window.NavbarView({
+            collection: sectionList
+          }).$el);
         }
       });
     };

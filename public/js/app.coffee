@@ -10,6 +10,7 @@ class AppRouter extends Backbone.Router
     sectionList = new window.SectionCollection()
     sectionList.fetch success: ->
       $('#content').html new window.SectionCollectionView(collection: sectionList).$el
+      $('#bs-example-navbar-collapse-1').html new window.NavbarView(collection: sectionList).$el
       return
 
     return
