@@ -5,11 +5,12 @@ class window.NavbarView extends Backbone.View
 
   initialize: ->
     @render()
+    #make the first navbar item "active" with jQuery
+    @$el.children().first().addClass('active')
 
   render: ->
-    _.each @collection.models, ((item, index) ->
+    _.each @collection.models, ((item) ->
       view = new NavbarItemView(model: item)
-      #view.$el.attr('class', 'active') if index == 0 # problematic, won't give away
       @$el.append view.el
       return
     ), this
