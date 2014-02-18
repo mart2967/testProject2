@@ -23,7 +23,9 @@ class window.SectionView extends Backbone.View
     # when the value of the text area changes, update the model on the client
     console.log 'changed'
     change = {}
-    change[event.target.name] = event.target.value #uses name attribute from html
+    changeTarget = event.target
+    change[changeTarget.name] = changeTarget.value #uses name attribute from html
+    # change = {body: 'whatever'}
     @model.set(change)
 
   editSection: ->

@@ -2,6 +2,13 @@
 Created by mart2967 on 1/30/14.
 ###
 class window.SectionCollectionView extends Backbone.View
+  events:
+    'change': 'change'
+
+  change: ->
+    #alert('A model changed')
+    #fires whenever one of it's models has a change as well
+
   initialize: ->
     @render()
 

@@ -15,11 +15,6 @@ db.on 'error', console.error.bind(console, 'connection error:')
 db.once 'open', ->
   console.log 'DB connection opened'
 
-
-#nodeInfo = new models.Section {title: 'Node.js', link: 'http://nodejs.org/', body: 'blah', category: 'main'}
-#nodeInfo.save()
-
-
 #set main layout
 app.set 'layout', 'layouts/main'
 #expose templates to all views
