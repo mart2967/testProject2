@@ -7,6 +7,7 @@ class window.NavbarView extends Backbone.View
     @render()
     #make the first navbar item "active" with jQuery
     @$el.children().first().addClass('active')
+    #@collection.on 'change', @render()
 
   render: ->
     _.each @collection.models, ((item) ->

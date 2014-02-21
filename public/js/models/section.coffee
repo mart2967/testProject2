@@ -7,6 +7,6 @@
     defaults:
       title: 'Title'
       link: '#'
-      body: 'Hello world'
+      body: 'Enter text here'
       category: 'default'
       htmlId: ''

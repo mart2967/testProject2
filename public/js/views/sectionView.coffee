@@ -5,10 +5,12 @@ class window.SectionView extends Backbone.View
   tagName: 'div'
   template: _.template $('#section-template').html() #_.template is a function that takes a JSON object and returns html
   editTemplate: _.template $('#section-edit-template').html()
+  newTemplate: _.template $('#section-create-template').html()
   events:
     'change': 'change'
     'click button.edit': 'editSection'
     'click button.save': 'saveSection'
+    'click button.delete': 'deleteSection'
 
   # the @ essentialy means "this."
   initialize: ->
@@ -16,7 +18,7 @@ class window.SectionView extends Backbone.View
     return
 
   render: ->
-    @$el.html @template(@model.toJSON()) #this.el is what we defined in tagName. use $el to get access to jQuery html() function
+    @$el.html @template(@model.toJSON())
     this
 
   change: (event) ->
@@ -42,3 +44,13 @@ class window.SectionView extends Backbone.View
       error: ->
         console.log 'error'
     @render()
+
+  deleteSection: ->
+    console.log 'deleting...'
+    @$el.fadeOut()
+    @model.destroy
+      success: ->
+        console.log 'Section deleted'
+      error: ->
+        console.log 'error deleting section'
+        @$el.show()

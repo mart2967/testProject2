@@ -17,7 +17,7 @@ exports.create = (req, res) ->
   newSection = new Section req.body
   console.log 'created section ' + newSection.title
   newSection.save()
-  res.send(newSection)
+  res.send newSection
 
 exports.getById = (req, res) ->
   id = req.params.id
@@ -35,6 +35,13 @@ exports.edit = (req, res) ->
     res.send section
   )
 
+exports.delete = (req, res) ->
+  id = req.params.id
+  Section.remove({_id: id}, (err, numAffected) ->
+    console.log err if err
+    console.log '%d document deleted', numAffected
+    res.send '200'
+  )
 populateDB = ->
   sections = [
     {
