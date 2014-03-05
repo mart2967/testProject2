@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "./node_modules/istanbul/lib/cli.js cover --hook-run-in-context ./node_modules/mocha/bin/_mocha -- --ui tdd -R spec -t 5000"
+    "test": "node_modules/mocha/bin/_mocha --ui tdd -R spec -t 5000",
+    "coverage": "node_modules/istanbul/lib/cli.js cover --hook-run-in-context node_modules/mocha/bin/_mocha -- --ui tdd -R spec -t 5000"
   },
   "dependencies": {
     "express": "3.4.x",
