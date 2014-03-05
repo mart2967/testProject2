@@ -12,10 +12,10 @@ class window.AppRouter extends Backbone.Router
     listView = new SectionCollectionView(collection: sectionList)
     sectionList.fetch success: ->
       listView.render()
-
-    $('#bs-example-navbar-collapse-1').html new NavbarView(collection: sectionList).$el
+      $('#content').html listView.$el
+      $('#bs-example-navbar-collapse-1').html new NavbarView(collection: sectionList).$el
     $('#add-section-div').html blankSection.$el
-    $('#content').html listView.$el
+
     @listenTo blankSection, 'save', ->
       console.log 'detected save'
       sectionList.fetch success: ->
