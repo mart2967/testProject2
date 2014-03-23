@@ -12,7 +12,6 @@ class window.newSectionView extends Backbone.View
     this
 
   render: ->
-    #@model.set {title: '', body: ''}
     @$el.html @template()
 
   change: (event) ->

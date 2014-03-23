@@ -9,7 +9,7 @@ app = express()
 
 #connect to database
 # ./mongodb/bin/mongod --dbpath ~/WebstormProjects/testProject2/db/
-mongoose.connect 'mongodb://localhost/test'
+mongoose.connect 'mongodb://localhost/nodebase'
 db = mongoose.connection
 db.on 'error', console.error.bind(console, 'connection error:')
 db.once 'open', ->

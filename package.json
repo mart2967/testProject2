@@ -1,11 +1,11 @@
 {
-    "name": "Application-base",
+    "name": "NodeBase",
     "version": "1.0.0",
     "private": true,
     "scripts": {
         "test": "coffee --compile --output . . && node_modules/mocha/bin/_mocha --reporter spec --timeout 60000",
         "itsanbul-cov": "node_modules/istanbul/lib/cli.js cover --hook-run-in-context node_modules/mocha/bin/_mocha -- --ui tdd -R spec -t 5000",
-        "blanket-cov": "coffee --compile --output . . && node_modules/mocha/bin/_mocha --require blanket --reporter html-cov > coverage.html --timeout 60000"
+        "blanket-cov": "node_modules/mocha/bin/_mocha --require blanket --reporter json-cov --timeout 60000"
     },
     "config": {
         "blanket": {
@@ -17,15 +17,14 @@
         "hogan-express": "0.5.x",
         "coffee-script": "1.7.x",
         "mongoose": "3.8.x"
-
     },
     "devDependencies": {
         "mocha": "1.17.x",
         "istanbul": "0.2.x",
         "nodemon": "1.0.x",
         "coffeelint": "1.0.x",
-        "grunt-cli": "~0.1.13",
-        "grunt": "~0.4.2",
+        "grunt-cli": "0.1.x",
+        "grunt": "0.4.x",
         "request": "2.34.x",
         "blanket": "1.1.x"
     }

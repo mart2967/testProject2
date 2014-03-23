@@ -12,16 +12,12 @@ describe 'testing a coffeescript cube function', ->
     assert.equal -27, cube(-3)
 
 describe 'incomplete test coverage example', ->
-
-
-
-
-
-  
   it '5 is not one', ->
     assert.equal false, isOdd5d(5)
   it '30525 is not one', ->
     assert.equal false, isOdd5d(30524)
+
+
 ###
 describe 'Create, read, update, and delete a Section', ->
   it 'Creates and saves a Section', ->
