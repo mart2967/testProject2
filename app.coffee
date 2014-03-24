@@ -11,7 +11,7 @@ app = express()
 
 #GET API KEY FROM DATABASE ON CI SERVER
 getAPIkey() if app.get 'env' == 'production'
-getAPIkey ->
+getAPIkey = ->
   console.log 'connecting to api key database'
   mongoose.connect 'mongodb://localhost/test'
   apiDB = mongoose.connection
