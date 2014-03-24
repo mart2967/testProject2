@@ -8,7 +8,20 @@ mongoose = require 'mongoose'
 app = express()
 
 #connect to database
-# ./mongodb/bin/mongod --dbpath ~/WebstormProjects/testProject2/db/
+
+#GET API KEY FROM DATABASE ON CI SERVER
+getAPIkey() if app.get 'env' == 'production'
+getAPIkey ->
+  console.log 'connecting to api key database'
+  mongoose.connect 'mongodb://localhost/test'
+  apiDB = mongoose.connection
+  apiDB.once 'open', ->
+    keyRecord = apiDB.query.find {owner: 'team1'} #TEAM NAMES UNIQUE 1-5
+    console.log keyRecord
+    app.set 'apikey', keyRecord.value
+    apiDB.close()
+
+#THE DATABASE NAME SHOULD BE UNIQUE TO GROUPS
 mongoose.connect 'mongodb://localhost/nodebase'
 db = mongoose.connection
 db.on 'error', console.error.bind(console, 'connection error:')
