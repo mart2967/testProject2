@@ -4,22 +4,8 @@ section = require './routes/section'
 http = require 'http'
 path = require 'path'
 mongoose = require 'mongoose'
-#models = require './schemas/schemas'
+APIkey = require('./schemas/schemas').APIkey
 app = express()
-
-#connect to database
-
-#GET API KEY FROM DATABASE ON CI SERVER
-getAPIkey() if app.get 'env' == 'production'
-getAPIkey = ->
-  console.log 'connecting to api key database'
-  mongoose.connect 'mongodb://localhost/test'
-  apiDB = mongoose.connection
-  apiDB.once 'open', ->
-    keyRecord = apiDB.query.find {owner: 'team1'} #TEAM NAMES UNIQUE 1-5
-    console.log keyRecord
-    app.set 'apikey', keyRecord.value
-    apiDB.close()
 
 #THE DATABASE NAME SHOULD BE UNIQUE TO GROUPS
 mongoose.connect 'mongodb://localhost/nodebase'
@@ -40,6 +26,8 @@ app.set 'partials',
 app.engine 'html', require('hogan-express')
 app.enable 'view cache'
 app.configure ->
+  #GET API KEY FROM DATABASE ON CI SERVER
+  app.set 'apikey', process.env.APIKEY or 'NO KEY'
   app.set 'port', process.env.PORT or 3000
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'html'
@@ -67,4 +55,4 @@ app.put '/section/:id', section.edit
 app.delete '/section/:id', section.delete
 
 http.createServer(app).listen app.get('port'), ->
-  console.log 'Express server listening on port ' + app.get('port')
+  console.log 'Express server listening on port ' + app.get('port') + ' with API key: ' + app.get('apikey')
