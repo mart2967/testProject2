@@ -1,16 +1,15 @@
 Section = require('../schemas/schemas').Section
 
 # Populate the database if there are no records
-Section.count({},(err, c) ->
+Section.count {},(err, c) ->
   console.log err if err
   if c == 0
     console.log 'Populating database'
     populateDB()
-)
+
 
 exports.findAll = (req, res) ->
   Section.find (err, items) ->
-    #console.log items
     res.send items
 
 
@@ -29,20 +28,20 @@ exports.edit = (req, res) ->
   section = req.body
   delete section._id
   id = req.params.id
-  Section.update({ _id: id }, { $set: section }, (err, numAffected, raw) ->
+  Section.update { _id: id }, { $set: section }, (err, numAffected, raw) ->
     console.log err if err
     console.log '%d document updated', numAffected
     #console.log 'The raw response from Mongo was ', raw
     res.send section
-  )
+
 
 exports.delete = (req, res) ->
   id = req.params.id
-  Section.remove({_id: id}, (err, numAffected) ->
+  Section.remove {_id: id}, (err, numAffected) ->
     console.log err if err
     console.log '%d document deleted', numAffected
     res.send '200'
-  )
+
 populateDB = ->
   sections = [
     {
